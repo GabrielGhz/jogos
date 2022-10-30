@@ -13,20 +13,21 @@ def jogar():
     print("(1) Fácil (2) Médio (3) Difícil")
 
     while True:
-        nivel = int(input("Defina o nível: "))
-        if (nivel == 1):
+        nivel = input("Defina o nível: ")
+        if (nivel == "1"):
             total_de_tentativas = 20
             break
-        elif (nivel == 2):
+        elif (nivel == "2"):
             total_de_tentativas = 10
             break
-        elif (nivel == 3):
+        elif (nivel == "3"):
             total_de_tentativas = 5
             break
         else:
             print("Número inválido, tente novemte!")
             continue
 
+    nivel = int(nivel)
 
     for rodada in range(1, total_de_tentativas + 1):
         print("Tentativa {} de {}".format(rodada, total_de_tentativas))
@@ -40,8 +41,8 @@ def jogar():
                 continue
 
         acertou = chute == numero_secreto
-        maior   = chute > numero_secreto
-        menor   = chute < numero_secreto
+        maior   = chute  > numero_secreto
+        menor   = chute  < numero_secreto
 
         if(acertou):
             print("Você acertou! e fez {} pontos!".format(pontos))
